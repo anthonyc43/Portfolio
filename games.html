@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+
+body {
+  background-color: #001f3f;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: #ffffff;
+  padding: 15px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* --- IMAGE ROW STYLING --- */
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px; /* space between images */
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+.image-row img {
+  width: 48%; /* each image takes up 48% of the container */
+  height: 360px; /* equal height */
+  object-fit: cover; /* crop nicely */
+  border-radius: 6px;
+  display: block;
+}
+
+/* On smaller screens, stack the images */
+@media only screen and (max-width: 600px) {
+  .image-row img {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Games</h1>
+</div>
+
+<p>
+  Ever since I was a little boy I loved video games and technology in general. Video games became my passion. I first fell in love with Minecraft and then I expanded to games like Just Cause 3 and Call of Duty: Ghosts. I originally started out on Microsoft using the Xbox 360 Kinect, then I switched over to Sony and started using the PlayStation 3. I also had a Nintendo 3DS which opened my eyes to games like Dragon Ball Z, Yo-Kai Watch and Mario Kart 7. Then I got older and started using the Sony systems PlayStation 4 and PlayStation 5 before switching back to Microsoft with the Xbox Series S. Later I realized how good I was with computers and I wanted to take advantage of that, so I joined this class to learn more about computers and video game design. Sin
+<!-- SIDE-BY-SIDE IMAGES -->
+<div class="image-row">
+  <img src="Images/Screenshot 2025-06-10 134900.png" alt="Screenshot 1">
+  <img src="Images/Screenshot 2025-11-12 100624.png" alt="Screenshot 2">
+</div>
+
+<!-- COIN FLIP GAME -->
+<!-- NUMBER GUESSING GAME -->
+<section class="number-game" aria-labelledby="number-heading" style="max-width:900px;margin:20px auto;text-align:center;color:#ffffff;">
+  <h2 id="number-heading">Number Guessing Game</h2>
+  <p>I'm thinking of a number between 1 and 100. Try to guess it — you'll get feedback if your guess is too high or too low.</p>
+  <div class="number-ui" style="display:flex;justify-content:center;gap:20px;align-items:center;flex-wrap:wrap;">
+    <div style="min-width:220px;">
+      <label for="guessInput" style="display:block;margin-bottom:6px;">Your guess</label>
+      <input id="guessInput" type="number" min="1" max="100" style="padding:8px;width:120px;font-size:16px;" />
+      <div style="margin-top:10px;">
+        <button id="guessBtn" style="padding:8px 14px;font-size:16px;cursor:pointer;">Guess</button>
+        <button id="resetBtn" style="padding:8px 14px;font-size:16px;cursor:pointer;margin-left:8px;">New Game</button>
+      </div>
+    </div>
+    <div style="min-width:220px;text-align:left;">
+      <div id="feedback" style="font-weight:bold;margin-bottom:8px;height:22px;">&nbsp;</div>
+      <div id="attempts">Attempts: 0</div>
+      <div id="history" style="margin-top:8px;font-size:14px;opacity:0.95;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Home link -->
+<div style="text-align:center; margin:18px 0;">
+  <a href="index.html" style="color:#ffffff; text-decoration:underline; font-weight:bold;">Home</a>
+</div>
+
+<style>
+/* Number game small tweaks */
+.number-game input[type="number"]::-webkit-inner-spin-button,
+.number-game input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.number-game #history { max-height:120px; overflow:auto; }
+.number-game .won { color: #2bff70; font-weight:bold; }
+.number-game .high { color: #ffd166; }
+.number-game .low { color: #ffd166; }
+</style>
+
+<script>
+// Number guessing game controller
+(function(){
+  const max = 100;
+  let secret = Math.floor(Math.random() * max) + 1;
+  let attempts = 0;
+  const guessInput = document.getElementById('guessInput');
+  const guessBtn = document.getElementById('guessBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const feedback = document.getElementById('feedback');
+  const attemptsEl = document.getElementById('attempts');
+  const historyEl = document.getElementById('history');
+
+  function resetGame(){
+    secret = Math.floor(Math.random() * max) + 1;
+    attempts = 0;
+    feedback.textContent = '';
+    attemptsEl.textContent = 'Attempts: 0';
+    historyEl.textContent = '';
+    guessInput.value = '';
+    guessInput.disabled = false;
+    guessBtn.disabled = false;
+    guessInput.focus();
+  }
+
+  function addHistory(msg){
+    const el = document.createElement('div');
+    el.textContent = msg;
+    historyEl.appendChild(el);
+    historyEl.scrollTop = historyEl.scrollHeight;
+  }
+
+  function makeGuess(){
+    const val = Number(guessInput.value);
+    if(!val || val < 1 || val > max){
+      feedback.textContent = 'Enter a number 1–100';
+      feedback.className = '';
+      return;
+    }
+    attempts++;
+    attemptsEl.textContent = 'Attempts: ' + attempts;
+    if(val === secret){
+      feedback.textContent = 'Correct! You guessed the number.';
+      feedback.className = 'won';
+      addHistory('Guess ' + attempts + ': ' + val + ' — Correct');
+      guessInput.disabled = true;
+      guessBtn.disabled = true;
+    } else if(val > secret){
+      feedback.textContent = 'Too high';
+      feedback.className = 'high';
+      addHistory('Guess ' + attempts + ': ' + val + ' — Too high');
+    } else {
+      feedback.textContent = 'Too low';
+      feedback.className = 'low';
+      addHistory('Guess ' + attempts + ': ' + val + ' — Too low');
+    }
+    guessInput.select();
+  }
+
+  guessBtn.addEventListener('click', makeGuess);
+  guessInput.addEventListener('keyup', function(e){ if(e.key === 'Enter') makeGuess(); });
+  resetBtn.addEventListener('click', resetGame);
+
+  // start initial game
+  resetGame();
+})();
+</script>
+<a href="index.html" style="color:#ffffff; text-decoration:underline; font-weight:bold;">Home</a>
+</body>
+</html>

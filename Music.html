@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: #33b5e5;
+  padding: 15px;
+  color: #2c1a92;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+h1 {
+  text-align: center;
+}
+body {
+  color: #ffffff;
+}
+/* image row: show screenshots side-by-side and equal size */
+.image-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap; /* keep side-by-side */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.image-row img {
+  flex: 0 0 48%;
+  width: 48%;
+  min-width: 220px;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body style="background-color: #001f3f;">
+
+<div class="header">
+  <h1>Projects  </h1>
+</div>
+<p style="font-family: 'Times New Roman', serif; line-height: 2; color:#ffffff;">This year, I started learning how to create sound effects and produce music. In 2024 and 2025, I served as the music producer for two video games called "Fightatron" and "Echo Chambers". Here are pictures of both games and a link to one of the songs I made for Echo Chambers. Music production has become a significant part of my creative outlet, allowing me to blend my love for gaming with artistic expression. I use tools like Soundtrap to compose and edit tracks, and I'm excited to continue developing my skills in audio design.</p>
+
+<div class="image-row">
+  <img src="Images/Screenshot 2025-11-12 092717.png" alt="Project screenshot 1">
+  <img src="Images/Screenshot 2025-10-30 105137.png" alt="Project screenshot 2">
+</div>
+
+<!-- Soundtrap link (moved below images, opens in new tab) -->
+<div style="text-align:center; margin:12px 0;">
+  <a href="https://www.soundtrap.com/studio/1hyaZHacTsiDY23KzUNKzQ/" target="_blank" rel="noopener noreferrer" style="color:#ffffff; text-decoration:underline; font-weight:bold;">listen to one of my demo projects</a>
+</div>
+
+<div style="text-align:center; margin:14px 0;">
+  <a href="index.html" style="color:#ffffff; text-decoration:underline; font-weight:bold;">Home</a>
+</div>
+</body>
+</html>
+
