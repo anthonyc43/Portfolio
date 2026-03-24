@@ -98,19 +98,56 @@ html {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
+
 h1 {
   text-align: center;
+}
+body {
+  color: #ffffff;
+}
+/* image row: side-by-side on wider screens, stack on narrow screens */
+.image-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: flex-start;
+  /* prevent wrapping so images stay side-by-side */
+  flex-wrap: nowrap;
+  
+}
+.image-row img {
+  /* Keep both images equal width and taller; do not wrap.
+     min-width prevents them from becoming too narrow on very small screens. */
+  flex: 0 0 50%;
+  width: 50%;
+  min-width: 220px;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
 }
 </style>
 </head>
 <body style="background-color: #001f3f;">
 
 <div class="header">
-  <h1>Contact Information</h1>
+  <h1>Art</h1>
 </div>
-<p style="color:#ffffff; font-family: 'Times New Roman', serif; line-height: 2;">For any questions, collaborations and business inquiries feel free to reach out to me via email at ac7732@questar.org. I'm always open to new opportunities and connections.</p>
-<!-- navigation link back to homepage (moved below the text) -->
-<div style="text-align:center; margin:10px 0;">
+<p style="font-family: 'Times New Roman', serif; line-height: 2; color:#ffffff;">Welcome to my art page! Here you can find some of my artwork and creative projects. Throughout my ventures in this field, I learned how to become a better artist and a better character creator. Here are some photos of my work.</p>
+<!-- Art image -->
+<div style="text-align:center; margin:14px 0;">
+  <img src="Images/Screenshot 2026-03-24 082838.png" alt="Art Screenshot" style="max-width:100%; height:auto;">
+</div>
+<!-- Another art image -->
+<div style="text-align:center; margin:14px 0;">
+  <img src="Images/DonutAnthony's.png" alt="Donut Anthony's Art" style="max-width:100%; height:auto;">
+</div>
+<!-- Most recent art image -->
+<div style="text-align:center; margin:14px 0;">
+  <img src="Images/Screenshot 2026-03-24 083748.png" alt="Most Recent Art Screenshot" style="max-width:100%; height:auto;">
+</div>
+<!-- navigation link back to homepage (moved below images) -->
+<div style="text-align:center; margin:14px 0;">
   <a href="index.html" style="color:#ffffff; text-decoration:underline; font-weight:bold;">Home</a>
 </div>
 </body>
