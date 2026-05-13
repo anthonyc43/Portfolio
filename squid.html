@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Squid Odyssey - Anthony Cerulli Jr</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #ffffff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 60px 20px 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-bottom: 4px solid #764ba2;
+}
+
+.header h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+p {
+  color: #f0f0f0;
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+code {
+  background-color: rgba(102, 126, 234, 0.2);
+  color: #a9c5ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.game-frame {
+  width: 100%;
+  max-width: 1080px;
+  height: 720px;
+  margin: 0 auto 40px;
+  border: 2px solid #667eea;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+  background: #000;
+}
+
+.project-note {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 24px;
+  border: 1px solid rgba(102, 126, 234, 0.5);
+  border-radius: 12px;
+  background: rgba(102, 126, 234, 0.08);
+  text-align: center;
+  color: #f0f0f0;
+}
+
+.project-note a {
+  color: #a9c5ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project-note a:hover {
+  color: #667eea;
+}
+
+.footer-link {
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-link a {
+  color: #a9c5ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.footer-link a:hover {
+  color: #667eea;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Squid Odyssey</h1>
+</div>
+
+<p>Play Squid Odyssey directly on this website. The game is embedded below using the exported HTML5 runtime. If the game does not display, please ensure the exported Construct 3 output folder is named <code>squid-odyssey</code> and contains an <code>index.html</code> file in your portfolio directory.</p>
+
+<div class="game-frame">
+  <iframe src="squid-odyssey/index.html" width="100%" height="100%" style="border:none;" title="Squid Odyssey"></iframe>
+</div>
+
+<div class="project-note">
+  <p>If the game does not load, please refresh the page.</p>
+</div>
+
+<div class="footer-link">
+  <a href="games.html" style="color:#a9c5ff; text-decoration:none; font-weight:bold; font-size: 1.1em; transition: color 0.3s ease;" onmouseover="this.style.color='#667eea'" onmouseout="this.style.color='#a9c5ff'">Return to Games</a>
+</div>
+
+</body>
+</html>

@@ -1,10 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthony Cerulli Jr - Portfolio</title>
 <style>
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 60px 20px 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-bottom: 4px solid #764ba2;
+}
+
+.header h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.header-subtitle {
+  font-size: 1.3em;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  opacity: 0.95;
+  margin-top: 8px;
+}
+
+.intro-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 50px auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.menu li {
+  margin: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border: 2px solid rgba(102, 126, 234, 0.4);
+  border-radius: 12px;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.menu li:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+  border-color: #a9c5ff;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.menu li a {
+  display: block;
+  padding: 28px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.3em;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.menu li:hover a {
+  color: #a9c5ff;
+  letter-spacing: 0.5px;
 }
 
 .row::after {
@@ -18,61 +114,12 @@
   padding: 15px;
 }
 
-html {
-  font-family: "Lucida Sans", sans-serif;
-}
-
-.header {
-  background-color: #9933cc;
-  color: #ffffff;
-  padding: 15px;
-}
-
-.menu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;}
-
-.menu {  width: 200px;
-  margin: 0 auto;
-}
-
-.menu li {
-  padding: 2px;
-  margin-bottom: 2px;
-  background-color: #33b5e5;
-  color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.menu li:hover {
-  background-color: #0099cc;
-}
-
-.aside {
-  background-color: #33b5e5;
-  padding: 15px;
-  color: #2c1a92;
-  text-align: center;
-  font-size: 14px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.footer {
-  background-color: #0099cc;
-  color: #ffffff;
-  text-align: center;
-  font-size: 12px;
-  padding: 15px;
-}
-
 /* For mobile phones: */
 [class*="col-"] {
   width: 100%;
 }
 
 @media only screen and (min-width: 600px) {
-  /* For tablets: */
   .col-s-1 {width: 8.33%;}
   .col-s-2 {width: 16.66%;}
   .col-s-3 {width: 25%;}
@@ -86,8 +133,8 @@ html {
   .col-s-11 {width: 91.66%;}
   .col-s-12 {width: 100%;}
 }
+
 @media only screen and (min-width: 768px) {
-  /* For desktop: */
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
   .col-3 {width: 25%;}
@@ -101,30 +148,71 @@ html {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
+
 h1 {
   text-align: center;
 }
+
+a {
+  color: #a9c5ff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #667eea;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a9c5ff;
+  font-size: 0.95em;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    grid-template-columns: 1fr;
+  }
+  
+  .header h1 {
+    font-size: 2.5em;
+  }
+  
+  .header-subtitle {
+    font-size: 1.1em;
+  }
+}
 </style>
 </head>
-<body style="background-color: #001f3f;">
+<body>
 
 <div class="header">
-  <h1>Anthony Cerulli Jr's Portfolio!</h1>
+  <h1>Anthony Cerulli Jr</h1>
+  <div class="header-subtitle">Sound Designer & Concept Artist</div>
 </div>
-<div class="main" >
+
+<div class="intro-section">
+  <p>Welcome to my portfolio. Explore my work in music production, and visual art.</p>
+</div>
+
+<div class="main">
   <div class="row">
     <div class="menu">
     <ul>
-      <li><a href="aboutme.html" style="color:inherit; text-decoration:none; display:block;">About Me</a></li>
-      <li><a href="contactinfo.html" style="color:inherit; text-decoration:none; display:block;">Contact Information</a></li>
-      <li><a href="Music.html" style="color:inherit; text-decoration:none; display:block;">Music</a></li>
-      <li><a href="games.html" style="color:inherit; text-decoration:none; display:block;">Games</a></li>
-      <li><a href="art.html" style="color:inherit; text-decoration:none; display:block;">Art</a></li>
-      <li><a href="resume.html" style="color:inherit; text-decoration:none; display:block;">Resume</a></li>
-      
+      <li><a href="aboutme.html">About Me</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="Music.html">Music</a></li>
+      <li><a href="art.html">Art</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contactinfo.html">Contact</a></li>
     </ul>
   </div>
   </div>
 </div>
 
 
+
+</body>
+</html>
